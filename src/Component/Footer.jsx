@@ -11,7 +11,7 @@ const Footer = () => {
                         <img src="/Vector.png" alt="" />
                     </div>                                 
                     <p className="text-white text-sm md:text-[8px] lg:text-[10px] xl:text-sm 2xl:text-2xl text-center md:text-justify px-10 md:px-0">
-                        Kalash Villa is a serene guesthouse nestled in the heart of Bumburat Vally , surrounded by the scenic peaks of the Hindukush mountains. It offers a peaceful retreat where guests can experience the rich Kalasha culture, stunning landscapes and the warmth of genuine local hospitality.
+                        Kalash Villa is a serene guesthouse nestled in the heart of Bumburat Valley , surrounded by the scenic peaks of the Hindukush mountains. It offers a peaceful retreat where guests can experience the rich Kalasha culture, stunning landscapes and the warmth of genuine local hospitality.
                     </p>
                 </div>
             </div>

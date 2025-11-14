@@ -19,7 +19,7 @@ export default function GuideSection() {
         <h2 className="text-[#4D2A11] text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold">
           A Son of the Mountains
         </h2>
-        <p className="text-gray-700 leading-relaxed md:mb-4 text-xs lg:text-xl xl:text-2xl 2xl:text-4xl">
+        <p className="text-gray-700 leading-relaxed md:mb-4 text-xs lg:text-xl xl:text-2xl 2xl:text-4xl text-center">
           Shoaib Aftab grew up right here in Bumburet Valley — surrounded by the
           mountains, festivals, and stories that make the Kalash culture so
           alive. As the son of your hosts at Kalash Villa, he’s been welcoming
