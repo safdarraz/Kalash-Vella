@@ -18,7 +18,10 @@ export default function CenterCarousel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [translateX, setTranslateX] = useState(0);
+
   const touchStartX = useRef(0);
+  const startIndex = useRef(0); // ⭐ NEW: Swipe starting index
+
   const total = images.length;
 
   // Disable body scroll when modal is open
@@ -34,7 +37,7 @@ export default function CenterCarousel() {
     if (offset !== 0) {
       setCurrentIndex((currentIndex + offset + total) % total);
     } else {
-      setIsModalOpen(true); // open modal when center image is clicked
+      setIsModalOpen(true);
     }
   };
 
@@ -47,28 +50,29 @@ export default function CenterCarousel() {
     return visible;
   };
 
-  // 🟢 Mobile swipe handlers
+  // 🟢 ⭐ FIXED: Smooth finger-follow drag
   const handleTouchStart = (e) => {
     if (window.innerWidth < 1024) {
       setIsDragging(true);
       touchStartX.current = e.touches[0].clientX;
+      startIndex.current = currentIndex; // ⭐ keeps stable start slide
     }
   };
 
   const handleTouchMove = (e) => {
     if (!isDragging || window.innerWidth >= 1024) return;
     const moveX = e.touches[0].clientX - touchStartX.current;
-    setTranslateX(moveX);
+    setTranslateX(moveX); // ⭐ REAL follow finger
   };
 
   const handleTouchEnd = () => {
     if (window.innerWidth < 1024) {
       setIsDragging(false);
 
-      if (translateX < -50) nextSlide(); // swipe left
-      else if (translateX > 50) prevSlide(); // swipe right
+      if (translateX < -70) nextSlide();       // Left swipe → next
+      else if (translateX > 70) prevSlide();   // Right swipe → previous
 
-      setTranslateX(0); // reset drag
+      setTranslateX(0); // ⭐ Snap back to center when gesture ends
     }
   };
 
@@ -92,7 +96,7 @@ export default function CenterCarousel() {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           style={{
-            transform: `translateX(${translateX}px)`,
+            transform: `translateX(${translateX}px)`, // ⭐ follows finger
           }}
         >
           {getVisibleImages().map(({ src, offset }, i) => {
@@ -118,7 +122,6 @@ export default function CenterCarousel() {
           })}
         </div>
 
-        {/* Arrows */}
         <div className="hidden lg:flex justify-center gap-2 p-5">
           <button
             onClick={prevSlide}
@@ -135,7 +138,6 @@ export default function CenterCarousel() {
         </div>
       </div>
 
-      {/* Modal for center image */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-gray-600/50 backdrop-blur-[4px] flex justify-center items-center z-50">
           <div className="flex items-center justify-center relative w-[80%] md:h-[460px] xl:h-[550px] 2xl:h-[950px] rounded-lg ">

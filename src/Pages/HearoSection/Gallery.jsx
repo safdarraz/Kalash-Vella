@@ -111,27 +111,47 @@ export default function ImageSlider() {
           </svg>
         </button>
 
-        {/* 🟢 Images (infinite + smooth swipe) */}
-        <div
-          className="flex justify-center items-center gap-[2%] w-full transition-transform duration-300 ease-in-out"
-          style={{
-            transform: `translateX(${translateX}px)`,
-          }}
-        >
-          {getVisibleImages().map((img, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 w-[30%] h-[150px] md:h-[200px] lg:h-[300px] xl:h-[400px] 2xl:h-[600px] overflow-hidden rounded-lg shadow-lg select-none"
-            >
-              <img
-                src={img}
-                alt={`Slide ${i}`}
-                className="w-full h-full object-cover pointer-events-none"
-                draggable="false"
-              />
-            </div>
-          ))}
-        </div>
+{/* 🟢 Images (infinite + smooth swipe) */}
+<div
+  className="flex justify-center items-center gap-[2%] w-full transition-transform duration-300 ease-in-out"
+  onTouchStart={(e) => {
+    if (window.innerWidth < 1024) {
+      setIsDragging(true);
+      setTouchStartX(e.touches[0].clientX); // ⭐ Start X
+    }
+  }}
+  onTouchMove={(e) => {
+    if (!isDragging || window.innerWidth >= 1024) return;
+    const moveX = e.touches[0].clientX - touchStartX;
+    setTranslateX(moveX); // ⭐ FOLLOW THE FINGER
+  }}
+  onTouchEnd={() => {
+    if (window.innerWidth < 1024) {
+      setIsDragging(false);
+      if (translateX < -50) nextSlide();  // ⭐ Swipe left → next
+      else if (translateX > 50) prevSlide(); // ⭐ Swipe right → prev
+      setTranslateX(0); // ⭐ Smooth snap back
+    }
+  }}
+  style={{
+    transform: `translateX(${translateX}px)`,
+  }}
+>
+  {getVisibleImages().map((img, i) => (
+    <div
+      key={i}
+      className="flex-shrink-0 w-[30%] h-[150px] md:h-[200px] lg:h-[300px] xl:h-[400px] 2xl:h-[600px] overflow-hidden rounded-lg shadow-lg select-none"
+    >
+      <img
+        src={img}
+        alt={`Slide ${i}`}
+        className="w-full h-full object-cover pointer-events-none"
+        draggable="false"
+      />
+    </div>
+  ))}
+</div>
+
 
         {/* Right Arrow (only for large screens) */}
         <button

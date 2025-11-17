@@ -28,8 +28,8 @@ const Navigation = (props) => {
 
   return (
     <>
-      <div className="z-80 backdrop:blur-[2px] flex bg-gray-900 items-center gap-2 w-full h-[50px] md:h-[100px] md:py-5 px-2 md:px-5 2xl:py-20">
-        <div className="flex items-center justify-end md:justify-center w-[33%] md:w-[15%] md:static absolute top-[10px] right-5">
+      <div className="z-80 backdrop:blur-[2px] flex bg-gray-900 items-center gap-2 w-full h-[50px] md:h-[100px] lg:h-[120px] xl:h-[140px] 2xl:h-[160px] md:py-5 px-2 md:px-5 2xl:py-20">
+        <div className="flex items-center justify-end md:justify-center w-[33%] md:w-[15%] md:static absolute top-[10px] lg:top-[15px] xl:top-[50px] right-5">
           <Logo />
         </div>
 
