@@ -17,10 +17,9 @@ export default function CenterCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
-  const [dragTranslate, setDragTranslate] = useState(0);
+  const [dragX, setDragX] = useState(0); // ⭐ Smooth drag movement
 
   const touchStartX = useRef(0);
-  const startIndex = useRef(0);
   const total = images.length;
 
   useEffect(() => {
@@ -48,29 +47,30 @@ export default function CenterCarousel() {
     return visible;
   };
 
-  // 🟢 Smooth Finger-Follow
+  // ⭐⭐⭐ Smooth Swipe System (Finger Follow + Soft Slide)
   const handleTouchStart = (e) => {
     if (window.innerWidth < 1024) {
-      setIsDragging(true);
       touchStartX.current = e.touches[0].clientX;
-      startIndex.current = currentIndex;
+      setIsDragging(true);
     }
   };
 
   const handleTouchMove = (e) => {
     if (!isDragging || window.innerWidth >= 1024) return;
+
     const moveX = e.touches[0].clientX - touchStartX.current;
-    setDragTranslate(moveX); // ⭐ Direct follow finger, no delay
+
+    setDragX(moveX * 0.7); // ⭐ Smooth + soft movement effect
   };
 
   const handleTouchEnd = () => {
     if (window.innerWidth < 1024) {
       setIsDragging(false);
 
-      if (dragTranslate < -50) nextSlide();
-      else if (dragTranslate > 50) prevSlide();
+      if (dragX < -60) nextSlide();
+      else if (dragX > 60) prevSlide();
 
-      setDragTranslate(0);
+      setDragX(0);
     }
   };
 
@@ -101,16 +101,18 @@ export default function CenterCarousel() {
             return (
               <div
                 key={i}
-                className={`relative h-[90%] w-[50%] md:h-[80%] md:w-[20%] rounded-sm overflow-hidden flex-shrink-0 cursor-pointer`}
+                className="relative h-[90%] w-[50%] md:h-[80%] md:w-[20%] rounded-sm overflow-hidden flex-shrink-0 cursor-pointer"
                 style={{
-                  transform: `translateX(${dragTranslate}px) scale(${scale})`,
+                  transform: `translateX(${dragX}px) scale(${scale})`,
                   zIndex: offset === 0 ? 10 : 2,
-                  transition: isDragging ? "none" : "transform 0.3s ease", // ⭐ No delay during drag
+                  transition: isDragging ? "none" : "transform 0.28s ease", // ⭐ smooth slide
                 }}
                 onClick={() => handleImageClick(offset)}
               >
                 <img src={src} alt={`img-${i}`} className="w-full h-full object-cover" />
-                {offset !== 0 && <div className="absolute inset-0 bg-white opacity-30"></div>}
+                {offset !== 0 && (
+                  <div className="absolute inset-0 bg-white opacity-30"></div>
+                )}
               </div>
             );
           })}

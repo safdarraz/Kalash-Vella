@@ -83,7 +83,7 @@ export default function GallerySection() {
       {/* Popup Grid */}
       {popupOpen && (
         <div className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm flex items-center justify-center z-50 p-5">
-          <div className="relative bg-white rounded-lg w-full h-full p-5 flex gap-3">
+          <div className="relative backdrop:blur-[4px] rounded-lg w-full h-full p-5 flex gap-3">
             <div className="grid grid-cols-4 gap-2 overflow-y-auto h-full w-full pr-2">
               {allImages.map((img, idx) => (
                 <div key={idx} className="cursor-pointer">
