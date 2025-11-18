@@ -19,7 +19,7 @@ export default function Step2() {
         </h2>
       </div>
         <div className="w-full h-[4px] rounded-full bg-amber-700">
-          <div className="w-[50%] bg-gray-500 rounded-full h-[4px] "></div>
+          <div className="w-[50%] bg-gray-300 rounded-full h-[4px] "></div>
         </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full md:px-5 ">
         {/* Left Section */}

@@ -4,7 +4,7 @@ const AboutUs = () => {
     return (
         <>
         <div className="relative bg-[url('/Aboutbg-min.jpg')] bg-cover h-[300px] md:h-[400px] lg:h-[600px] xl:h-[700px] 2xl:h-[1000px] md:bg-center bg-no-repeat w-full">
-          <div className="bg-gradient-to-b from-gray-900 via-gray-900/60 to-gray-900/30 h-[300px] md:h-[400px] lg:h-[600px] xl:h-[700px] w-full">
+          <div className="bg-gradient-to-b from-gray-900/50 via-gray-900/30 to-gray-900/0 h-[300px] md:h-[400px] lg:h-[600px] xl:h-[700px] w-full">
               <div className="w-full flex flex-col justify-center items-center">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#724A2F]/40 rounded-lg w-[200px] md:w-[300px] lg:w-[500px] xl:w-[900px] 2xl:w-[1000px] p-2 lg:p-4 xl:p-6">
                   <h1 className="text-white text-center font-bold md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-7xl ">About Us</h1>

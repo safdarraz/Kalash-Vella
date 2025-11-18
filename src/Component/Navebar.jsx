@@ -28,7 +28,7 @@ const Navigation = (props) => {
 
   return (
     <>
-      <div className="z-80 backdrop:blur-[2px] flex bg-gray-900 items-center gap-2 w-full h-[50px] md:h-[100px] lg:h-[120px] xl:h-[140px] 2xl:h-[160px] md:py-5 px-2 md:px-5 2xl:py-20">
+      <div className="absolute inset-0 md:backdrop-blur-0 z-80 flex items-center gap-2 w-full h-[50px] md:h-[100px] lg:h-[120px] xl:h-[140px] 2xl:h-[160px] md:py-5 px-2 md:px-5 2xl:py-20">
         <div className="flex items-center justify-end md:justify-center w-[33%] md:w-[15%] md:static absolute top-[10px] lg:top-[15px] xl:top-[50px] right-5">
           <Logo />
         </div>
@@ -46,7 +46,7 @@ const Navigation = (props) => {
           {/* Navigation Links */}
           <ul
             ref={navRef}
-            className={`bg-white/70 z-100 backdrop-blur-[2px] absolute flex-col items-center font-semibold text-white w-full py-5 lg:px-2 top-[50px] left-0
+            className={`bg-white/80 backdrop-blur-xs md:backdrop-blur-[0px] z-100 absolute flex-col items-center font-semibold text-white w-full py-5 lg:px-2 top-[50px] left-0
                         md:static md:bg-transparent md:flex md:flex-row gap-2 2xl:gap-15 md:items-center md:justify-center transition transform duration-200
                         ${open ? "flex" : "hidden"}`}
           >
@@ -59,7 +59,7 @@ const Navigation = (props) => {
 
             <li>
               <Link
-                className="hover:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] rounded-lg border border-transparent hover:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
+                className="md:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] hover:bg-gradient-to-t hover:from-[#412410] hover:via-[#8a4c1f] hover:to-[#412410] rounded-lg border border-transparent hover:border-white md:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
                 to="/"
                 onClick={() => setOpen(false)}>
                 Home
@@ -67,7 +67,7 @@ const Navigation = (props) => {
             </li>
             <li>
               <Link
-                className="hover:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] rounded-lg border border-transparent hover:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
+                className="md:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] hover:bg-gradient-to-t hover:from-[#412410] hover:via-[#8a4c1f] hover:to-[#412410] rounded-lg border border-transparent hover:border-white md:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
                 to="/About"
                 onClick={() => setOpen(false)}
               >
@@ -76,7 +76,7 @@ const Navigation = (props) => {
             </li>
             <li>
               <Link
-                className="hover:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] rounded-lg border border-transparent hover:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
+                className="md:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] hover:bg-gradient-to-t hover:from-[#412410] hover:via-[#8a4c1f] hover:to-[#412410] rounded-lg border border-transparent hover:border-white md:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
                 to="/Gallery"
                 onClick={() => setOpen(false)}
               >
@@ -85,7 +85,7 @@ const Navigation = (props) => {
             </li>
             <li>
               <Link
-                className="hover:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] rounded-lg border border-transparent hover:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
+                className="md:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] hover:bg-gradient-to-t hover:from-[#412410] hover:via-[#8a4c1f] hover:to-[#412410] rounded-lg border border-transparent hover:border-white md:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
                 to="/MeetYourGuide"
                 onClick={() => setOpen(false)}
               >
@@ -94,7 +94,7 @@ const Navigation = (props) => {
             </li>
             <li>
               <Link
-                className="hover:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] rounded-lg border border-transparent hover:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
+                className="md:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] hover:bg-gradient-to-t hover:from-[#412410] hover:via-[#8a4c1f] hover:to-[#412410] rounded-lg border border-transparent hover:border-white md:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
                 to="/RandPricing"
                 onClick={() => setOpen(false)}
               >
@@ -103,7 +103,7 @@ const Navigation = (props) => {
             </li>
             <li>
               <Link
-                className="hover:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] rounded-lg border border-transparent hover:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
+                className="md:bg-gradient-to-b from-[#4D2A11] via-[#B36228] to-[#4D2A11] hover:bg-gradient-to-t hover:from-[#412410] hover:via-[#8a4c1f] hover:to-[#412410] rounded-lg border border-transparent hover:border-white md:border-white hover:text-white text-black md:text-white md:text-[10px] lg:text-sm xl:text-lg 2xl:text-2xl p-2"
                 to="/ContectUs"
                 onClick={() => setOpen(false)}
               >

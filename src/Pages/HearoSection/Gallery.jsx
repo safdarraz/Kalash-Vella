@@ -122,7 +122,7 @@ export default function ImageSlider() {
         {/* Right Arrow */}
         <button
           onClick={nextSlide}
-          className="hidden lg:block absolute bg-[#724A2F] hover:bg-[#4d2a11] rounded-full p-2 z-30 top-1/2 -translate-y-1/2 right-2 xl:right-4 2xl:right-10">
+          className="hidden lg:block absolute bg-[#724A2F] hover:bg-[#4d2a11] rounded-full p-2 z-90 top-1/2 -translate-y-1/2 right-2 xl:right-4 2xl:right-10">
           <RightDubleArow className="h-8 2xl:h-20 rounded-full pointer-events-auto"/>
         </button>
       </div>

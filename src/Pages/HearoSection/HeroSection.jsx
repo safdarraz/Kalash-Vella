@@ -7,8 +7,8 @@ const HeroSection = () => {
     return (
         <>
         <div className="bg-[url('/HomeBg-min.jpg')] bg-cover h-[300px] md:h-[400px] lg:h-[600px] xl:h-[700px] 2xl:h-[1000px] bg-right md:bg-center bg-no-repeat w-full">
-          <div className="bg-gradient-to-b from-gray-900 via-gray-900/80 to-gray-900/0 h-[300px] md:h-[400px] lg:h-[600px] xl:h-[700px] w-full z-10">
-              <div className="w-full flex flex-col gap-3 md:gap-2 justify-center items-center pt-10">
+          <div className="bg-gradient-to-b from-gray-900/60 via-gray-900/30 to-gray-900/0 h-[300px] md:h-[400px] lg:h-[600px] xl:h-[700px] w-full z-10">
+              <div className="w-full flex flex-col gap-3 md:gap-2 justify-center items-center pt-20 md:pt-30 lg:pt-40 xl:pt-50 2xl:pt-60">
                 <div className=" bg-[#724A2F]/40 rounded-lg w-[250px] md:w-[300px] lg:w-[500px] xl:w-[900px] 2xl:w-[1000px] md:p-2 lg:p-4 xl:p-6">
                   <h1 className="text-white text-center font-bold text-lg md:text-2xl lg:text-4xl xl:text-6xl 2xl:text-7xl ">Welcome to Kalash Villa</h1>
                 </div>

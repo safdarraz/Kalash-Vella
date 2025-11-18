@@ -278,9 +278,7 @@ export default function Step1() {
         <div className="flex md:mt-5">
           <button
             className="bg-[#4D2A11] hover:bg-[#B36228] text-white md:text-xs lg:text-sm xl:text-lg 2xl:text-xl px-8 xl:px-12 xl:py-2 py-1 rounded-full">
-            <Link to="/Step2" onClick={() => setOpen(true)}>
                 Next
-              </Link>
           </button>
         </div>
       </form>
