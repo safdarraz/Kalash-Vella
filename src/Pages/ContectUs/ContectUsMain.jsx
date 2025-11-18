@@ -111,7 +111,6 @@ const ContectUsMain = () => {
                     placeholder="📧 Email Address"
                     className="w-full border border-gray-300 rounded-full pl-5 pr-2 py-2 focus:outline-none md:text-[10px] lg:text-xs xl:text-sm 2xl:text-lg"/>
                 </div>
-                <p className="text-[#B36228] md:text-[10px] lg:text-xs xl:text-sm 2xl:text-lg mt-1">(optional)</p>
               </div>
               {/* Phone */}
               <div className="flex flex-col md:gap-1 lg:gap-2">
