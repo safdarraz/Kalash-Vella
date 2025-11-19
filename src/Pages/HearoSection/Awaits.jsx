@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { LeftDubleArow, RightDubleArow } from "../../assets/icons/icons";
 
 export default function Awaits() {
   const images = [
@@ -97,23 +98,17 @@ export default function Awaits() {
         {/* Left Button for md+ */}
         <button
           onClick={prevSlide}
-          className="hidden md:block absolute z-20 md:top-60 lg:top-1/2 -translate-y-1/2 left-2 xl:left-5 2xl:left-15"
-        >
-          <svg className="md:w-[40px] md:h-[40px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px] 2xl:w-[70px] 2xl:h-[70px]" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="59.5" y="59.5" width="59" height="59" rx="29.5" transform="rotate(180 59.5 59.5)" fill="#67491C" fillOpacity="0.9" />
-            <rect x="59.5" y="59.5" width="59" height="59" rx="29.5" transform="rotate(180 59.5 59.5)" stroke="white" />
-            <path d="M40.4999 30H20.0833" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M27.6667 38.1666L19.5 30L27.6667 21.8333" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          className="bg-[#67491C] border border-white hidden md:block absolute z-20 md:top-50 xl:top-1/2 -translate-y-1/2 left-2 rounded-full p-2">
+          <LeftDubleArow className="rounded-full md:w-[20px] md:h-[20px] xl:w-[35px] xl:h-[35px] 2xl:w-[70px] 2xl:h-[70px]"/>
         </button>
 
         {/* Images */}
         <div className="flex justify-center items-start gap-4 w-full overflow-hidden p-2">
           {getVisibleImages().map((img, i) => (
-            <div key={i} className="flex flex-col justify-cente items-center w-full md:w-[30%] h-auto md:h-[500px] p-2 overflow-hidden shadow-lg gap-2">
-              <img src={img.src} alt={`Slide ${i}`} className="w-full h-[200px] overflow-y-hidden"/>
-              <h1 className="text-lg font-bold text-center">{img.title}</h1>
-              <p className="text-sm text-center">{img.text}</p>
+            <div key={i} className="flex flex-col justify-cente items-center w-full md:w-[35%] h-auto md:h-[500px] xl:h-[700px] 2xl:h-[900px] p-2 overflow-hidden shadow-lg gap-2 xl:gap-4 2xl:gap-6">
+              <img src={img.src} alt={`Slide ${i}`} className="w-full h-[200px] lg:h-px] xl:h-[400px] 2xl:h-[600px] overflow-y-hidden"/>
+              <h1 className="text-lg font-bold text-center lg:text-lg xl:text-2xl 2xl:text-4xl">{img.title}</h1>
+              <p className="text-sm text-center lg:text-lg xl:text-xl 2xl:text-2xl">{img.text}</p>
             </div>
           ))}
         </div>
@@ -121,14 +116,8 @@ export default function Awaits() {
         {/* Right Button for md+ */}
         <button
           onClick={nextSlide}
-          className="hidden md:block absolute z-20 md:top-60 lg:top-1/2 -translate-y-1/2 right-2 xl:right-5 2xl:right-15"
-        >
-          <svg className="md:w-[40px] md:h-[40px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px] 2xl:w-[70px] 2xl:h-[70px]" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0.5" y="-0.5" width="59" height="59" rx="29.5" transform="matrix(1 0 0 -1 0 59)" fill="#67491C" fillOpacity="0.9"/>
-            <rect x="0.5" y="-0.5" width="59" height="59" rx="29.5" transform="matrix(1 0 0 -1 0 59)" stroke="white"/>
-            <path d="M19.5 30H39.9166" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M32.3333 38.1666L40.5 30L32.3333 21.8333" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          className="bg-[#67491C] border border-white hidden md:block absolute z-20 md:top-50 xl:top-1/2 -translate-y-1/2 right-2 rounded-full p-2">
+          <RightDubleArow className="rounded-full md:w-[20px] md:h-[20px] xl:w-[35px] xl:h-[35px] 2xl:w-[70px] 2xl:h-[70px]"/>
         </button>
       </div>
 
